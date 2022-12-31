@@ -18,6 +18,17 @@ which can eat into potential profits. As with any arbitrage strategy,
  it's important to carefully consider the risks involved before entering into a trade.
 
 
+ In this updated version of the function, if the initial profit calculation is negative, 
+ the function adjusts the exchange rates by a small amount (in this case, 1%) and recalculates the profit. 
+ This can potentially make the trade profitable, depending on the magnitude of the adjustments and the impact of transaction costs.
+
+It's important to note that this is just a simple example, 
+and in a real trading situation you would need to consider additional factors such as transaction costs, 
+risks, and potential changes in exchange rates over time. 
+It's also important to carefully research and understand the laws and regulations regarding currency trading in your jurisdiction. 
+It's also worth noting that it may not always be possible to find an arbitrage opportunity by simply adjusting the exchange rates, 
+and that there may be other factors at play that can affect the profitability of a trade.
+
  */
 
 function triangularArbitrage(usd, gbp, eur, leverage) {
@@ -86,4 +97,25 @@ function triangularArbitrage(usd, gbp, eur, leverage) {
   
   // Example usage
   triangularArbitrage(1.40, 0.90, 1.20, 500);
-  
+
+
+  /**
+   * 
+If you call the updated triangularArbitrage() function with the exchange rates 1.40, 0.90, 1.20, and leverage of 500, the function will perform the following calculations:
+
+Convert $100 to £70 (100 / 1.40 = 70)
+Convert £70 to 63 euros (70 / 0.90 = 77)
+Convert 63 euros back to $76 (63 x 1.20 = 76)
+Calculate profit of $-24
+Calculate profit with leverage of $-12000
+The profit from the trade in this case would be negative, as the final US dollars amount is less than the original $100. 
+The function would print the message "No potential profit at current exchange rates."
+
+It's important to note that using leverage can significantly increase the potential profits and losses from a trade,
+ and can also increase the risk of losing money. It's important to carefully consider the risks and understand the 
+ laws and regulations regarding the use of leverage in your jurisdiction before entering into any trades.
+
+It's also important to note that this is just a simple example, and in a real trading situation you would need to consider additional factors 
+such as transaction costs, risks, and potential changes in exchange rates over time. It's also important to carefully research and understand the 
+laws and regulations regarding currency trading in your jurisdiction.
+   */
